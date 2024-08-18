@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+}
+* {
+  -webkit-tap-highlight-color: #fff6;
+}
+::selection {
+  background-color: #fff;
+  color: #000;
+}
+.title {
+  font-family: Georgia;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #5f5, #0ff);
+  margin: 6px;
+}
+#list-container {
+  overflow-y: auto;
+  height: 320px;
+  border-block: 1px solid #fff;
+  overscroll-behavior: contain;
+}
+#pinned-items-container {
+  margin-block: 10px;
+  padding-block: 10px;
+  overflow-y: auto;
+  min-height: 0.14em;
+  max-height: calc(1.618em + 100px);
+  border-block: 1px solid #fff;
+  overscroll-behavior: contain;
+  transition: 0.3 ease;
+}
+.pinned-items-title {
+  margin-block: 3px;
+  color: #fff;
+}
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: 1px solid #000;
+}
+
+.add-button {
+  margin-left: 5px;
+  padding-block: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 11pt;
+  height: auto;
+  width: 15vw;
+  background-color: #4af;
+}
+
+.add-button:active {
+  background-color: #218838;
+}
+
+.item.removing {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  margin-bottom: 5px;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: 0.4s ease;
+}
+
+.item p {
+  max-width: 70%;
+  word-wrap: break-word;
+  flex-grow: 1;
+  color: #fff;
+}
+
+.item .check {
+  margin-right: 10px;
+  justify-content: start;
+}
+
+.item .remove {
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #ff4757;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.item .remove:hover {
+  color: #e84118;
+}
+.item.pinned {
+  background-color: #666;
+}
+.pin {
+  position: absolute;
+  right:5px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  white-space: nowrap;
+  font-size: 15pt;
+}
+.pin.icon.ion-md-arrow-dropup {
+  color: #ff0;
+  background-color: #333;
+}
+.pin.icon.ion-md-arrow-dropdown {
+  color: #000;
+  background-color: #fff;
+}
+.check {
+  transform: scale(1.3);
+}
+.check:checked {
+  background-color: #afa;
+}
